@@ -3,21 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name — Robotics Scientist & Engineer</title>
-  <meta name="description" content="Portfolio of Your Name — robotics scientist/engineer specializing in human–robot interaction, safety, perception, and control." />
-  <meta name="keywords" content="robotics, human-robot interaction, HRI, computer vision, control, motion planning, safety, ROS, ROS2, machine learning" />
-  <meta property="og:title" content="Your Name — Robotics Scientist & Engineer" />
+  <title>Sharath Nataraj — Robotics Scientist & Engineer</title>
+  <meta name="description" content="Portfolio of Sharath Nataraj — robotics scientist/engineer specializing in human–robot interaction, robot safety, perception, navigation, and control." />
+  <meta name="keywords" content="robotics, HRI, safety, computer vision, control, ROS, ROS2, Gazebo, Nvidia Omniverse, SLAM, ML" />
+  <meta property="og:title" content="Sharath Nataraj — Robotics Scientist & Engineer" />
   <meta property="og:description" content="Robotics portfolio: projects, publications, demos, and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/og.png" />
-  <meta property="og:url" content="https://yourusername.github.io" />
+  <meta property="og:url" content="https://sharathbhushan.github.io" />
   <meta name="twitter:card" content="summary_large_image" />
-  <!-- Optional: Google Analytics (replace G-XXXXXXX) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX');
-  </script> -->
   <style>
     :root{
       --bg: #0b0d10; --surface:#111418; --text:#e6e9ef; --muted:#98a2b3; --brand:#6ee7b7; --accent:#60a5fa; --ring:#22d3ee;
@@ -67,7 +61,6 @@
     @media (max-width: 880px){ .hero{grid-template-columns: 1fr} .project img{width:140px} .grid.cols-3{grid-template-columns:1fr} .grid.cols-2{grid-template-columns:1fr} }
   </style>
   <script>
-    // Simple theme toggle (remembers choice)
     const setTheme = (m) => { document.documentElement.dataset.theme = m; localStorage.setItem('theme', m); };
     const initTheme = () => { const saved = localStorage.getItem('theme'); if(saved) setTheme(saved); };
     document.addEventListener('DOMContentLoaded', initTheme);
@@ -76,14 +69,14 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Your Name",
+    "name": "Sharath Nataraj",
     "description": "Robotics scientist/engineer focusing on HRI, safety, perception, and control.",
-    "image": "https://yourusername.github.io/assets/avatar.jpg",
-    "url": "https://yourusername.github.io",
+    "image": "https://sharathbhushan.github.io/assets/avatar.jpg",
+    "url": "https://sharathbhushan.github.io",
     "sameAs": [
-      "https://github.com/yourusername",
-      "https://scholar.google.com/citations?user=XXXXX",
-      "https://www.linkedin.com/in/yourusername/"
+      "https://github.com/SHARATHbhushan",
+      "https://scholar.google.com/",
+      "https://www.linkedin.com/in/sharath967/"
     ]
   }
   </script>
@@ -95,15 +88,15 @@
         <div class="brand">
           <div class="avatar" aria-hidden="true"></div>
           <div>
-            <strong>Your Name</strong><br/>
-            <span class="mono" style="font-size:12px; color:var(--muted)">Robotics Scientist & Engineer</span>
+            <strong>Sharath Nataraj</strong><br/>
+            <span class="mono" style="font-size:12px; color:var(--muted)">Robotics Scientist & Engineer · HRI · Safety · Perception</span>
           </div>
         </div>
         <div class="navlinks">
           <a class="btn" href="#projects">Projects</a>
           <a class="btn" href="#publications">Publications</a>
           <a class="btn" href="#demos">Demos</a>
-          <a class="btn" href="#talks">Talks</a>
+          <a class="btn" href="#talks">Activities</a>
           <a class="btn" href="cv.pdf" target="_blank" rel="noopener">CV</a>
           <button class="theme-toggle btn" aria-label="Toggle theme" onclick="setTheme(document.documentElement.dataset.theme==='light'?'dark':'light')">
             <span aria-hidden="true">🌓</span>
@@ -116,23 +109,23 @@
   <main>
     <section class="container hero">
       <div>
-        <span class="pill">Available for collaborations</span>
-        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; color:transparent">Your Name</span> — I build safe, intelligent robot systems.</h1>
-        <p class="lead">I work on <strong>human–robot interaction</strong>, <strong>robot safety</strong>, <strong>perception</strong>, and <strong>control</strong>. My work spans simulation to real hardware with ROS/ROS 2, leveraging modern ML where it truly adds value.</p>
+        <span class="pill">Open to collaborations</span>
+        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; color:transparent">Sharath</span> — I build safe, intelligent robot systems.</h1>
+        <p class="lead">I work on <strong>human–robot interaction</strong>, <strong>robot safety</strong>, <strong>perception</strong>, and <strong>navigation/control</strong>. I bridge simulation and hardware with ROS/ROS 2, Gazebo/Isaac Sim, and modern ML when it adds real value.</p>
         <div class="tags">
           <span class="pill">ROS 2</span>
-          <span class="pill">Perception</span>
+          <span class="pill">HRI & Safety</span>
+          <span class="pill">Perception · SLAM</span>
           <span class="pill">Planning & Control</span>
-          <span class="pill">Safety & HRI</span>
           <span class="pill">Python · C++</span>
-          <span class="pill">GPU · RTX</span>
+          <span class="pill">OpenCV · YOLO · OpenVINO</span>
         </div>
         <div class="navlinks" role="group" aria-label="Hero actions">
           <a class="btn primary" href="#projects">Explore Projects</a>
-          <a class="btn" href="mailto:you@domain.com">Contact</a>
-          <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://scholar.google.com/citations?user=XXXXX" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="btn" href="https://www.linkedin.com/in/yourusername/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="mailto:sharathbhushan18@gmail.com">Contact</a>
+          <a class="btn" href="https://github.com/SHARATHbhushan" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="btn" href="https://www.linkedin.com/in/sharath967/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
       <div class="panel">
@@ -140,19 +133,19 @@
         <div class="grid cols-2" style="margin-top:8px">
           <div>
             <div class="kpis"><span>⚙️</span><strong>Expertise</strong></div>
-            <div class="mono" style="font-size:14px">HRI · Safety · CV/ML · Control · Simulation · Calibration</div>
+            <div class="mono" style="font-size:14px">HRI · Safety · Perception/CV/ML · Navigation/Control · Simulation · Calibration</div>
           </div>
           <div>
             <div class="kpis"><span>🧪</span><strong>Tooling</strong></div>
-            <div class="mono" style="font-size:14px">ROS2 · Gazebo/Ignition · Isaac Sim · PyTorch · OpenCV · MoveIt</div>
+            <div class="mono" style="font-size:14px">ROS/ROS2 · Gazebo/Ignition · Isaac Sim · Nvidia Omniverse · OpenCV/YOLO/OpenVINO · MoveIt</div>
           </div>
           <div>
             <div class="kpis"><span>📍</span><strong>Location</strong></div>
-            <div class="mono" style="font-size:14px">Stuttgart, Germany · open to remote</div>
+            <div class="mono" style="font-size:14px">Stuttgart, Germany · open to collaboration/remote</div>
           </div>
           <div>
             <div class="kpis"><span>📄</span><strong>Keywords</strong></div>
-            <div class="mono" style="font-size:14px">risk assessment · collision modeling · explainability</div>
+            <div class="mono" style="font-size:14px">risk assessment · collision modeling · navigation · explainability</div>
           </div>
         </div>
       </div>
@@ -163,30 +156,58 @@
       <p class="lead">A selection of hands-on work. Each tile links to code, paper, or a demo.</p>
       <div class="grid cols-3">
         <article class="project">
-          <img src="assets/project1.jpg" alt="Robot arm interacting safely with a human" />
+          <img src="assets/project_cara.jpg" alt="Collaborative robot safety risk assessment pipeline" />
           <div class="project-body">
-            <h3>Computer-Aided Risk Assessment (CARA)</h3>
-            <p>Pipeline for quantifying collision forces and risk in human–robot collaboration, bridging simulation and physical testing.</p>
-            <div class="kpis"><span>🔬 ROS2</span><span>📈 Safety</span><span>🧪 Isaac Sim</span></div>
-            <p><a href="#" target="_blank" rel="noopener">Code</a> · <a href="#" target="_blank" rel="noopener">Paper</a> · <a href="#demos">Demo</a></p>
+            <h3>Computer‑Aided Risk Assessment (CARA)</h3>
+            <p>R&D of a software pipeline to quantify collision forces and risk in human–robot collaboration; bridges simulation and physical testing (Fraunhofer IPA).</p>
+            <div class="kpis"><span>🔬 ROS2</span><span>📈 Safety</span><span>🧪 Gazebo/Isaac Sim</span></div>
+            <p><a href="#" target="_blank" rel="noopener">Overview</a> · <a href="#demos">Demo</a></p>
           </div>
         </article>
         <article class="project">
-          <img src="assets/project2.jpg" alt="Humanoid walking with highlighted joint torques" />
+          <img src="assets/project_robodashcam.jpg" alt="Multi‑sensor data capture for robot cells" />
           <div class="project-body">
-            <h3>Humanoid Risk Estimator</h3>
-            <p>Domain-specific action recognition + force/pressure prediction to anticipate unsafe interactions in HRC.</p>
-            <div class="kpis"><span>🤖 HRI</span><span>🧠 ML</span><span>🎯 Explainability</span></div>
-            <p><a href="#" target="_blank" rel="noopener">Code</a> · <a href="#">Preprint</a></p>
-          </div>
-        </article>
-        <article class="project">
-          <img src="assets/project3.jpg" alt="Robot perception visualization with 3D point clouds" />
-          <div class="project-body">
-            <h3>RoboDashCam</h3>
-            <p>Data engine for synchronized multi-sensor capture and 3D reconstruction, enabling long-horizon safety analytics.</p>
+            <h3>Robo‑Dashcam</h3>
+            <p>Post‑deployment safety analytics for robot cells; synchronized capture and 3D reconstruction for long‑horizon analysis (lead developer).</p>
             <div class="kpis"><span>📷 Perception</span><span>🛰️ SLAM</span><span>🧩 Calibration</span></div>
-            <p><a href="#" target="_blank" rel="noopener">Code</a> · <a href="#">Docs</a></p>
+            <p><a href="#" target="_blank" rel="noopener">Notes</a></p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="assets/project_hri.jpg" alt="HRI using Intel D435i and pose estimation" />
+          <div class="project-body">
+            <h3>HRC with D435i & Pose Estimation</h3>
+            <p>Deployed HRC using D435i and pose recognition (OpenPose/OpenNI); mapping/localization for swarm robots; observers for navigation error.</p>
+            <div class="kpis"><span>🤖 HRI</span><span>🧠 Pose Estimation</span><span>🗺️ Swarm Nav</span></div>
+            <p><a href="https://github.com/swarmBots-ipa" target="_blank" rel="noopener">GitHub</a></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid cols-3" style="margin-top:18px">
+        <article class="project">
+          <img src="assets/project_speech.jpg" alt="Speech module for autonomous robot control" />
+          <div class="project-body">
+            <h3>Speech Module for Telepresence Robot</h3>
+            <p>Wake word, STT/NLU/TTS to execute tasks & schedule appointments; web frontend for text/voice interaction.</p>
+            <div class="kpis"><span>🗣️ NLP</span><span>🔗 MQTT/Flask</span><span>☁️ Google Cloud</span></div>
+            <p><a href="https://github.com/SHARATHbhushan/speech_module_client" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="assets/project_faultinject.jpg" alt="Fault injection for 7-DOF Panda in ROS-Gazebo" />
+          <div class="project-body">
+            <h3>Fault Injection Framework (Panda 7‑DOF)</h3>
+            <p>ROS‑Gazebo tool to inject stochastic faults/errors for robust control testing; University of Stuttgart Master Thesis.</p>
+            <div class="kpis"><span>🧪 Gazebo</span><span>🤖 Panda</span><span>🧠 Robustness</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <img src="assets/project_agv.jpg" alt="AGV perception with Intel RealSense and YOLO OpenVINO" />
+          <div class="project-body">
+            <h3>AGV Perception (BEC GmbH)</h3>
+            <p>Multi‑camera RealSense D435i point‑cloud fusion; dynamic object detection & tracking using YOLO accelerated with OpenVINO.</p>
+            <div class="kpis"><span>📦 AGV</span><span>🧠 YOLO/OpenVINO</span><span>🛰️ Point Clouds</span></div>
           </div>
         </article>
       </div>
@@ -196,19 +217,14 @@
       <h2>Publications & Reports</h2>
       <div class="panel">
         <article class="pub">
-          <strong>Title of your paper (Year)</strong><br>
-          <em>Conference/Journal</em> — Authors: You, Coauthor, Coauthor
-          <div class="kpis"><a href="#" target="_blank" rel="noopener">PDF</a> · <a href="#" target="_blank" rel="noopener">DOI</a> · <a href="#" target="_blank" rel="noopener">Code</a></div>
-          <details><summary>BibTeX</summary>
-            <pre class="mono">@inproceedings{you2025title,
-  title={Title}, author={You and Coauthor}, booktitle={Conf}, year={2025}
-}</pre>
-          </details>
+          <strong>Use of Ground Penetrating Radars in Planetary Rovers (2019)</strong><br>
+          <em>IJRESM</em> — Authors: Sharath Nataraj, et al.
+          <div class="kpis"><a href="https://www.ijresm.com/volume-1-issue-10-october-2019" target="_blank" rel="noopener">PDF</a></div>
         </article>
         <article class="pub">
-          <strong>Another work on HRI safety (2024)</strong><br>
-          <em>ArXiv preprint</em> — Authors: You, Collaborator
-          <div class="kpis"><a href="#" target="_blank" rel="noopener">Preprint</a> · <a href="#" target="_blank" rel="noopener">Project</a></div>
+          <strong>Multipurpose Defense Robot (2020)</strong><br>
+          <em>IRJET</em> — Authors: Sharath Nataraj, et al.
+          <div class="kpis"><a href="https://www.irjet.net/volume7-issue7" target="_blank" rel="noopener">Link</a></div>
         </article>
       </div>
     </section>
@@ -221,18 +237,35 @@
         </div>
         <div class="panel">
           <h3>Interactive Safety Visualizer</h3>
-          <p>Try the WebGL visualizer that overlays predicted forces and risk levels on robot motion. Works best on desktop Chrome/Firefox.</p>
+          <p>WebGL visualizer overlaying predicted forces and risk levels on robot motion. Works best on desktop Chrome/Firefox.</p>
           <p><a class="btn" href="#" target="_blank" rel="noopener">Open Visualizer</a></p>
         </div>
       </div>
     </section>
 
     <section id="talks" class="container">
-      <h2>Talks & Teaching</h2>
+      <h2>Talks & Activities</h2>
       <div class="panel">
         <ul>
-          <li><strong>Invited Talk:</strong> Safe HRC Beyond Thresholds — <em>Robotics Meetup, 2025</em> — <a href="#">Slides</a></li>
-          <li><strong>Guest Lecture:</strong> Practical ROS 2 for HRC — <em>University of X, 2024</em> — <a href="#">Syllabus</a></li>
+          <li><strong>Presentation:</strong> Self‑Learning AI Robotic Tank — <em>National Conference on Recent Trends in Science, Engineering and Management, 2019</em></li>
+          <li><strong>Workshops:</strong> Machine Learning (IIT Roorkee, 2019); Java & Web Design (2017)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <div class="panel">
+        <p class="mono">ROS/ROS2 · Python · C/C++ · MATLAB · 3D Geometry · OpenCV · OpenPose/OpenNI · HRI/HRC · SLAM · LiDAR/Radar · Rviz · Gazebo · MoveIt · Git · CI/CD · Docker · Human Skeleton Tracking · ML · HTML/CSS/JS · Raspberry Pi · MQTT · TCP/UDP</p>
+      </div>
+    </section>
+
+    <section id="education" class="container">
+      <h2>Education</h2>
+      <div class="panel">
+        <ul>
+          <li><strong>M.Sc. Electrical Engineering (Smart Systems)</strong> — University of Stuttgart (2020–Present)</li>
+          <li><strong>B.Eng. Electronics & Communication</strong> — Dr. Ambedkar Institute of Technology (2016–2020)</li>
         </ul>
       </div>
     </section>
@@ -240,12 +273,12 @@
     <section id="contact" class="container">
       <h2>Contact</h2>
       <div class="panel">
-        <p>Open to collaborations, consulting, and speaking. The best way to reach me is email.</p>
         <ul>
-          <li>Email: <a href="mailto:you@domain.com">you@domain.com</a></li>
-          <li>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener">@yourusername</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/yourusername/" target="_blank" rel="noopener">yourusername</a></li>
-          <li>Google Scholar: <a href="https://scholar.google.com/citations?user=XXXXX" target="_blank" rel="noopener">profile</a></li>
+          <li>Email: <a href="mailto:sharathbhushan18@gmail.com">sharathbhushan18@gmail.com</a></li>
+          <li>Phone: <a href="tel:+4915904735846">+49 159 0473 5846</a></li>
+          <li>GitHub: <a href="https://github.com/SHARATHbhushan" target="_blank" rel="noopener">@SHARATHbhushan</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/sharath967/" target="_blank" rel="noopener">sharath967</a></li>
+          <li>Location: Stuttgart, Germany</li>
         </ul>
       </div>
     </section>
@@ -254,7 +287,7 @@
   <footer>
     <div class="container">
       <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
-        <div>© <span id="y"></span> Your Name. Built with vanilla HTML/CSS. Hosted on GitHub Pages.</div>
+        <div>© <span id="y"></span> Sharath Nataraj. Built with vanilla HTML/CSS. Hosted on GitHub Pages.</div>
         <div class="mono">Last updated: <span id="updated"></span></div>
       </div>
     </div>
