@@ -4,15 +4,83 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sharath Nataraj — Robotics Scientist & Engineer</title>
-  <meta name="description" content="Portfolio of Sharath Nataraj — robotics scientist/engineer specializing in robot safety, HRI, perception, and control." />
-  <meta name="keywords" content="robotics, human-robot interaction, HRI, safety, perception, control, ROS, ROS2, Gazebo, machine learning" />
+  <meta name="description" content="Portfolio of Sharath Nataraj — robotics scientist/engineer specializing in human–robot interaction, robot safety, perception, navigation, and control." />
+  <meta name="keywords" content="robotics, HRI, safety, computer vision, control, ROS, ROS2, Gazebo, Nvidia Omniverse, SLAM, ML" />
   <meta property="og:title" content="Sharath Nataraj — Robotics Scientist & Engineer" />
   <meta property="og:description" content="Robotics portfolio: projects, publications, demos, and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/og.png" />
   <meta property="og:url" content="https://sharathbhushan.github.io" />
   <meta name="twitter:card" content="summary_large_image" />
-  <style>/* same CSS as before */</style>
+  <style>
+    :root{
+      --bg: #0b0d10; --surface:#111418; --text:#e6e9ef; --muted:#98a2b3; --brand:#6ee7b7; --accent:#60a5fa; --ring:#22d3ee;
+      --card:#0f1216; --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{--bg:#f7f7fb; --surface:#ffffff; --text:#0b0d10; --muted:#475467; --brand:#059669; --accent:#2563eb; --ring:#0ea5e9; --card:#ffffff; --shadow: 0 8px 24px rgba(10, 37, 64, .15)}
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    header{position:sticky; top:0; backdrop-filter:saturate(1.2) blur(6px); background:color-mix(in srgb, var(--bg) 80%, transparent); border-bottom:1px solid color-mix(in srgb, var(--muted) 20%, transparent); z-index:50}
+    nav{display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; gap:12px; align-items:center}
+    .avatar{width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg, var(--brand), var(--accent)); box-shadow:var(--shadow)}
+    .navlinks{display:flex; gap:18px; align-items:center}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; background:var(--surface); border:1px solid color-mix(in srgb, var(--muted) 20%, transparent); border-radius:14px; text-decoration:none; transition:.2s transform, .2s box-shadow}
+    .btn:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg, color-mix(in srgb, var(--brand) 70%, #fff), color-mix(in srgb, var(--accent) 60%, #fff)); color:#0b0d10; border:none}
+    .pill{display:inline-flex; gap:6px; align-items:center; padding:6px 10px; border-radius:999px; background:color-mix(in srgb, var(--muted) 10%, transparent); border:1px solid color-mix(in srgb, var(--muted) 20%, transparent); font-size:12px}
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; padding:32px 0}
+    .hero h1{font-size: clamp(28px, 5vw, 46px); line-height:1.15; margin:10px 0}
+    .lead{color:var(--muted); font-size:clamp(16px, 2.2vw, 18px)}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 20px}
+    .panel{background:var(--card); border:1px solid color-mix(in srgb, var(--muted) 18%, transparent); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .grid{display:grid; gap:18px}
+    .grid.cols-3{grid-template-columns: repeat(3, minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns: repeat(2, minmax(0,1fr))}
+    section{padding:26px 0}
+    h2{font-size:22px; margin:0 0 8px}
+    .project{display:flex; gap:14px; border-radius:16px; overflow:hidden; border:1px solid color-mix(in srgb, var(--muted) 18%, transparent); background:linear-gradient(180deg, color-mix(in srgb, var(--card) 92%, #000), color-mix(in srgb, var(--card) 85%, #000))}
+    .project img{width:200px; aspect-ratio: 4/3; object-fit:cover}
+    .project-body{padding:14px}
+    .kpis{display:flex; gap:12px; flex-wrap:wrap; color:var(--muted); font-size:13px}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+    .pub{padding:12px 0; border-bottom:1px dashed color-mix(in srgb, var(--muted) 20%, transparent)}
+    .pub:last-child{border-bottom:none}
+    details{border:1px dashed color-mix(in srgb, var(--muted) 25%, transparent); border-radius:14px; padding:10px 12px}
+    summary{cursor:pointer}
+    .video{position:relative; padding-top:56.25%; border-radius:14px; overflow:hidden; box-shadow:var(--shadow)}
+    .video iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0}
+    footer{margin-top:40px; padding:28px 0; color:var(--muted); font-size:14px; border-top:1px solid color-mix(in srgb, var(--muted) 20%, transparent)}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+    .theme-toggle{cursor:pointer; border:none; background:transparent; padding:8px; border-radius:12px}
+    @media (max-width: 880px){ .hero{grid-template-columns: 1fr} .project img{width:140px} .grid.cols-3{grid-template-columns:1fr} .grid.cols-2{grid-template-columns:1fr} }
+  </style>
+  <script>
+    const setTheme = (m) => { document.documentElement.dataset.theme = m; localStorage.setItem('theme', m); };
+    const initTheme = () => { const saved = localStorage.getItem('theme'); if(saved) setTheme(saved); };
+    document.addEventListener('DOMContentLoaded', initTheme);
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sharath Nataraj",
+    "description": "Robotics scientist/engineer focusing on HRI, safety, perception, and control.",
+    "image": "https://sharathbhushan.github.io/assets/avatar.jpg",
+    "url": "https://sharathbhushan.github.io",
+    "sameAs": [
+      "https://github.com/SHARATHbhushan",
+      "https://scholar.google.com/",
+      "https://www.linkedin.com/in/sharath967/",
+      "https://www.youtube.com/@sharathnataraj"
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -22,15 +90,19 @@
           <div class="avatar" aria-hidden="true"></div>
           <div>
             <strong>Sharath Nataraj</strong><br/>
-            <span class="mono" style="font-size:12px; color:var(--muted)">Robotics Scientist & Engineer</span>
+            <span class="mono" style="font-size:12px; color:var(--muted)">Robotics Scientist & Engineer · HRI · Safety · Perception</span>
           </div>
         </div>
-        <div class="navlinks"><a class="btn" href="#media">Media</a>
-          <a class="btn" href="#experience">Experience</a>
+        <div class="navlinks">
           <a class="btn" href="#projects">Projects</a>
           <a class="btn" href="#publications">Publications</a>
-          <a class="btn" href="#education">Education</a>
-          <a class="btn" href="SharathNataraj_CV.pdf" target="_blank" rel="noopener">CV</a>
+          <a class="btn" href="#demos">Demos</a>
+          <a class="btn" href="#media">Media</a><!-- NEW -->
+          <a class="btn" href="#talks">Activities</a>
+          <a class="btn" href="cv.pdf" target="_blank" rel="noopener">CV</a>
+          <button class="theme-toggle btn" aria-label="Toggle theme" onclick="setTheme(document.documentElement.dataset.theme==='light'?'dark':'light')">
+            <span aria-hidden="true">🌓</span>
+          </button>
         </div>
       </nav>
     </div>
@@ -39,85 +111,72 @@
   <main>
     <section class="container hero">
       <div>
-        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; color:transparent">Sharath Nataraj</span>. I build safe, intelligent robotic systems.</h1>
-        <p class="lead">Robotics Engineer with expertise in <strong>robot safety</strong>, <strong>autonomous navigation</strong>, <strong>perception</strong>, and <strong>human–robot collaboration</strong>. Experienced in ROS/ROS2, Gazebo, and simulation-driven development with real robot platforms like UR, Fanuc, KUKA, and Denso.</p>
+        <span class="pill">Open to collaborations</span>
+        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; color:transparent">Sharath</span> — I build safe, intelligent robot systems.</h1>
+        <p class="lead">I work on <strong>human–robot interaction</strong>, <strong>robot safety</strong>, <strong>perception</strong>, and <strong>navigation/control</strong>. I bridge simulation and hardware with ROS/ROS 2, Gazebo/Isaac Sim, and modern ML when it adds real value.</p>
         <div class="tags">
-          <span class="pill">ROS 2</span>
-          <span class="pill">Gazebo</span>
-          <span class="pill">Perception</span>
-          <span class="pill">Navigation</span>
-          <span class="pill">HRI</span>
+          <span class="pill">ROS 2</span>
+          <span class="pill">HRI & Safety</span>
+          <span class="pill">Perception · SLAM</span>
+          <span class="pill">Planning & Control</span>
           <span class="pill">Python · C++</span>
-          <span class="pill">Machine Learning</span>
+          <span class="pill">OpenCV · YOLO · OpenVINO</span>
         </div>
-        <div class="navlinks" role="group" aria-label="Profile links">
+        <div class="navlinks" role="group" aria-label="Hero actions">
+          <a class="btn primary" href="#projects">Explore Projects</a>
+          <a class="btn" href="mailto:sharathbhushan18@gmail.com">Contact</a>
           <a class="btn" href="https://github.com/SHARATHbhushan" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.youtube.com/@sharathnataraj" target="_blank" rel="noopener">YouTube</a><!-- NEW -->
+          <a class="btn" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
           <a class="btn" href="https://www.linkedin.com/in/sharath967/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://www.youtube.com/@sharathnataraj" target="_blank" rel="noopener">YouTube</a>
-          <a class="btn" href="mailto:sharathbhushan18@gmail.com">Email</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>At a glance</h2>
+        <div class="grid cols-2" style="margin-top:8px">
+          <div>
+            <div class="kpis"><span>⚙️</span><strong>Expertise</strong></div>
+            <div class="mono" style="font-size:14px">HRI · Safety · Perception/CV/ML · Navigation/Control · Simulation · Calibration</div>
+          </div>
+          <div>
+            <div class="kpis"><span>🧪</span><strong>Tooling</strong></div>
+            <div class="mono" style="font-size:14px">ROS/ROS2 · Gazebo/Ignition · Isaac Sim · Nvidia Omniverse · OpenCV/YOLO/OpenVINO · MoveIt</div>
+          </div>
+          <div>
+            <div class="kpis"><span>📍</span><strong>Location</strong></div>
+            <div class="mono" style="font-size:14px">Stuttgart, Germany · open to collaboration/remote</div>
+          </div>
+          <div>
+            <div class="kpis"><span>📄</span><strong>Keywords</strong></div>
+            <div class="mono" style="font-size:14px">risk assessment · collision modeling · navigation · explainability</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="container">
-      <h2>Professional Experience</h2>
-      <div class="panel">
-        <h3>Research Scientist – Robot Safety and Cobots</h3>
-        <p><em>Fraunhofer IPA, Stuttgart — June 2023–Present</em></p>
-        <ul>
-          <li>Lead developer of <strong>Computer-Aided Risk Assessment (CARA)</strong> software for collaborative robots.</li>
-          <li>Project lead for <strong>Robo-Dashcam</strong> and Cobot Safety Exploration at ARENA 2036.</li>
-          <li>Researching <strong>context awareness</strong> and <strong>real-time risk assessment</strong>.</li>
-          <li>Robots used: UR, Fanuc, KUKA, Denso; Tools: ROS, Karel, UR RTDE, Nvidia Omniverse.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Student Assistant – Robotic System Integration</h3>
-        <p><em>Fraunhofer IPA, Stuttgart — July 2022–June 2023</em></p>
-        <ul>
-          <li>Implemented human–robot collaboration with Intel D435i + OpenPose/OpenNI.</li>
-          <li>Mapping/localization of swarm robots; developed error observers for navigation (<a href="https://github.com/swarmBots-ipa">GitHub</a>).</li>
-          <li>Skills: ROS/ROS2, Gazebo, Rviz, point clouds, SLAM, Python, C++.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Intern – Robotics R&D</h3>
-        <p><em>BEC GmbH, Reutlingen — Sept 2021–Sept 2022</em></p>
-        <ul>
-          <li>Developed a <strong>vision system for AGVs</strong> using Intel RealSense D435i & YOLO (OpenVINO).</li>
-          <li>Designed control loops & calibration for LED motion indication.</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Working Student – IoT Developer</h3>
-        <p><em>n-fuse GmbH, Stuttgart — July 2021–Oct 2021</em></p>
-        <ul>
-          <li>Developed backend for media control system (kids’ playhouse).</li>
-          <li>Calibrated Raspberry Pi as server-client for projectors/speakers.</li>
-        </ul>
-      </div>
-    </section>
-
+    <!-- NEW: Media section -->
     <section id="media" class="container">
       <h2>Media & Demos</h2>
-      <p class="lead">Direct links to raw videos/images in this repository (organized by project).</p>
+      <p class="lead">Direct links to raw videos and images in this repository (organized by project).</p>
+
       <div class="panel">
         <h3>Bachelor Thesis</h3>
         <ul>
           <li><a href="data/Bachelor%20Thesis/Defence_Robot.mp4" target="_blank" rel="noopener">Defense Robot — demo video (MP4)</a></li>
         </ul>
       </div>
+
       <div class="panel">
-        <h3>IPA Projects</h3>
+        <h3>IPA</h3>
         <ul>
           <li><a href="data/IPA/rdc_cara.mp4" target="_blank" rel="noopener">CARA — risk assessment clip (MP4)</a></li>
           <li><a href="data/IPA/rdc_plc_switch.mp4" target="_blank" rel="noopener">PLC switch demo (MP4)</a></li>
-          <li><a href="data/IPA/Robo-Dashcam_04.mp4" target="_blank" rel="noopener">Robo‑Dashcam — system overview (MP4)</a></li>
-          <li><a href="data/IPA/VC_RoboDashCam_calib.MP4" target="_blank" rel="noopener">Robo‑Dashcam — calibration (MP4)</a></li>
-          <li><a href="data/IPA/VC_RoboDashCam_vid.mp4" target="_blank" rel="noopener">Robo‑Dashcam — sample capture (MP4)</a></li>
+          <li><a href="data/IPA/Robo-Dashcam_04.mp4" target="_blank" rel="noopener">Robo-Dashcam — system overview (MP4)</a></li>
+          <li><a href="data/IPA/VC_RoboDashCam_calib.MP4" target="_blank" rel="noopener">Robo-Dashcam — calibration (MP4)</a></li>
+          <li><a href="data/IPA/VC_RoboDashCam_vid.mp4" target="_blank" rel="noopener">Robo-Dashcam — sample capture (MP4)</a></li>
           <li><a href="data/IPA/swarmBots-demo-video.mp4" target="_blank" rel="noopener">SwarmBots demo (MP4)</a></li>
           <li><a href="data/IPA/Sprint_2023.MP4" target="_blank" rel="noopener">Sprint 2023 highlights (MP4)</a></li>
-          <li><a href="data/IPA/Screencast%20from%2003-20-2024%2011_20_12%20AM.webm" target="_blank" rel="noopener">Screen‑capture (WEBM)</a></li>
+          <li><a href="data/IPA/Screencast%20from%2003-20-2024%2011_20_12%20AM.webm" target="_blank" rel="noopener">Screen-capture (WEBM)</a></li>
           <li><a href="data/IPA/emotion_detection_video.avi" target="_blank" rel="noopener">Emotion detection — realtime (AVI)</a></li>
           <li><a href="data/IPA/emotion_detection_video_slow.avi" target="_blank" rel="noopener">Emotion detection — slow (AVI)</a></li>
           <li><a href="data/IPA/output.avi" target="_blank" rel="noopener">Pipeline output (AVI)</a></li>
@@ -125,21 +184,24 @@
           <li><a href="data/IPA/Annotation%202025-09-09%20094125.png" target="_blank" rel="noopener">Annotation image (PNG)</a></li>
         </ul>
       </div>
+
       <div class="panel">
         <h3>Master Thesis</h3>
         <ul>
-          <li><a href="data/Master%20Thesis/Fault_Injection.mp4" target="_blank" rel="noopener">Fault Injection — Panda 7‑DOF (MP4)</a></li>
+          <li><a href="data/Master%20Thesis/Fault_Injection.mp4" target="_blank" rel="noopener">Fault Injection — Panda 7-DOF (MP4)</a></li>
         </ul>
       </div>
+
       <div class="panel">
         <h3>Personal Projects</h3>
         <ul>
           <li><a href="data/Personal%20Projects/mk2_robot_arm.jpg" target="_blank" rel="noopener">MK2 robot arm (JPG)</a></li>
-          <li><a href="data/Personal%20Projects/Watch_winder_frontend.jpg" target="_blank" rel="noopener">Watch‑winder UI (JPG)</a></li>
-          <li><a href="data/Personal%20Projects/Watch_winder_image.jpg" target="_blank" rel="noopener">Watch‑winder hardware (JPG)</a></li>
-          <li><a href="data/Personal%20Projects/Watch_winder.mp4" target="_blank" rel="noopener">Watch‑winder demo (MP4)</a></li>
+          <li><a href="data/Personal%20Projects/Watch_winder_frontend.jpg" target="_blank" rel="noopener">Watch-winder UI (JPG)</a></li>
+          <li><a href="data/Personal%20Projects/Watch_winder_image.jpg" target="_blank" rel="noopener">Watch-winder hardware (JPG)</a></li>
+          <li><a href="data/Personal%20Projects/Watch_winder.mp4" target="_blank" rel="noopener">Watch-winder demo (MP4)</a></li>
         </ul>
       </div>
+
       <div class="panel">
         <h3>Research Project</h3>
         <ul>
@@ -147,61 +209,123 @@
         </ul>
       </div>
     </section>
+    <!-- /Media -->
 
     <section id="projects" class="container">
-      <h2>Key Projects</h2>
-      <div class="grid cols-2">
-        <div class="panel">
-          <h3>Master Thesis – Fault Injection Framework</h3>
-          <p>Developed ROS-Gazebo based tool to inject stochastic faults in 7DOF Panda Robot.</p>
-        </div>
-        <div class="panel">
-          <h3>Speech Module for Autonomous Robot Control</h3>
-          <p>Implemented wake-word detection, speech-to-text, NLP, and appointment scheduling on telepresence robot (<a href="https://github.com/SHARATHbhushan/speech_module_client">GitHub</a>).</p>
-        </div>
-        <div class="panel">
-          <h3>MK2 Robotic Arm</h3>
-          <p>Integrated inverse kinematics with EEZYBOT ARM mk2 using MoveIt and ROS.</p>
-        </div>
-        <div class="panel">
-          <h3>Line Following Robot</h3>
-          <p>Obstacle avoidance with infrared/ultrasonic sensors on Arduino platform.</p>
-        </div>
+      <h2>Featured Projects</h2>
+      <p class="lead">A selection of hands-on work. Each tile links to code, paper, or a demo.</p>
+      <div class="grid cols-3">
+        <article class="project">
+          <img src="assets/project_cara.jpg" alt="Collaborative robot safety risk assessment pipeline" />
+          <div class="project-body">
+            <h3>Computer-Aided Risk Assessment (CARA)</h3>
+            <p>R&D of a software pipeline to quantify collision forces and risk in human–robot collaboration; bridges simulation and physical testing (Fraunhofer IPA).</p>
+            <div class="kpis"><span>🔬 ROS2</span><span>📈 Safety</span><span>🧪 Gazebo/Isaac Sim</span></div>
+            <p><a href="#" target="_blank" rel="noopener">Overview</a> · <a href="#demos">Demo</a></p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="assets/project_robodashcam.jpg" alt="Multi-sensor data capture for robot cells" />
+          <div class="project-body">
+            <h3>Robo-Dashcam</h3>
+            <p>Post-deployment safety analytics for robot cells; synchronized capture and 3D reconstruction for long-horizon analysis (lead developer).</p>
+            <div class="kpis"><span>📷 Perception</span><span>🛰️ SLAM</span><span>🧩 Calibration</span></div>
+            <p><a href="#" target="_blank" rel="noopener">Notes</a></p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="assets/project_hri.jpg" alt="HRI using Intel D435i and pose estimation" />
+          <div class="project-body">
+            <h3>HRC with D435i & Pose Estimation</h3>
+            <p>Deployed HRC using D435i and pose recognition (OpenPose/OpenNI); mapping/localization for swarm robots; observers for navigation error.</p>
+            <div class="kpis"><span>🤖 HRI</span><span>🧠 Pose Estimation</span><span>🗺️ Swarm Nav</span></div>
+            <p><a href="https://github.com/swarmBots-ipa" target="_blank" rel="noopener">GitHub</a></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid cols-3" style="margin-top:18px">
+        <article class="project">
+          <img src="assets/project_speech.jpg" alt="Speech module for autonomous robot control" />
+          <div class="project-body">
+            <h3>Speech Module for Telepresence Robot</h3>
+            <p>Wake word, STT/NLU/TTS to execute tasks & schedule appointments; web frontend for text/voice interaction.</p>
+            <div class="kpis"><span>🗣️ NLP</span><span>🔗 MQTT/Flask</span><span>☁️ Google Cloud</span></div>
+            <p><a href="https://github.com/SHARATHbhushan/speech_module_client" target="_blank" rel="noopener">Code</a></p>
+          </div>
+        </article>
+        <article class="project">
+          <img src="assets/project_faultinject.jpg" alt="Fault injection for 7-DOF Panda in ROS-Gazebo" />
+          <div class="project-body">
+            <h3>Fault Injection Framework (Panda 7-DOF)</h3>
+            <p>ROS-Gazebo tool to inject stochastic faults/errors for robust control testing; University of Stuttgart Master Thesis.</p>
+            <div class="kpis"><span>🧪 Gazebo</span><span>🤖 Panda</span><span>🧠 Robustness</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <img src="assets/project_agv.jpg" alt="AGV perception with Intel RealSense and YOLO OpenVINO" />
+          <div class="project-body">
+            <h3>AGV Perception (BEC GmbH)</h3>
+            <p>Multi-camera RealSense D435i point-cloud fusion; dynamic object detection & tracking using YOLO accelerated with OpenVINO.</p>
+            <div class="kpis"><span>📦 AGV</span><span>🧠 YOLO/OpenVINO</span><span>🛰️ Point Clouds</span></div>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="publications" class="container">
-      <h2>Publications</h2>
+      <h2>Publications & Reports</h2>
+      <div class="panel">
+        <article class="pub">
+          <strong>Use of Ground Penetrating Radars in Planetary Rovers (2019)</strong><br>
+          <em>IJRESM</em> — Authors: Sharath Nataraj, et al.
+          <div class="kpis"><a href="https://www.ijresm.com/volume-1-issue-10-october-2019" target="_blank" rel="noopener">PDF</a></div>
+        </article>
+        <article class="pub">
+          <strong>Multipurpose Defense Robot (2020)</strong><br>
+          <em>IRJET</em> — Authors: Sharath Nataraj, et al.
+          <div class="kpis"><a href="https://www.irjet.net/volume7-issue7" target="_blank" rel="noopener">Link</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="demos" class="container">
+      <h2>Live Demos</h2>
+      <div class="grid cols-2">
+        <div class="video">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo video" allowfullscreen></iframe>
+        </div>
+        <div class="panel">
+          <h3>Interactive Safety Visualizer</h3>
+          <p>WebGL visualizer overlaying predicted forces and risk levels on robot motion. Works best on desktop Chrome/Firefox.</p>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Open Visualizer</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="talks" class="container">
+      <h2>Talks & Activities</h2>
       <div class="panel">
         <ul>
-          <li><strong>Use of Ground Penetrating Radars in Planetary Rovers</strong> (2019) — <a href="https://www.ijresm.com/volume-1-issue-10-october-2019" target="_blank">IJRESM</a></li>
-          <li><strong>Multipurpose Defense Robot</strong> (2020) — <a href="https://www.irjet.net/volume7-issue7" target="_blank">IRJET</a></li>
+          <li><strong>Presentation:</strong> Self-Learning AI Robotic Tank — <em>National Conference on Recent Trends in Science, Engineering and Management, 2019</em></li>
+          <li><strong>Workshops:</strong> Machine Learning (IIT Roorkee, 2019); Java & Web Design (2017)</li>
         </ul>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <div class="panel">
+        <p class="mono">ROS/ROS2 · Python · C/C++ · MATLAB · 3D Geometry · OpenCV · OpenPose/OpenNI · HRI/HRC · SLAM · LiDAR/Radar · Rviz · Gazebo · MoveIt · Git · CI/CD · Docker · Human Skeleton Tracking · ML · HTML/CSS/JS · Raspberry Pi · MQTT · TCP/UDP</p>
       </div>
     </section>
 
     <section id="education" class="container">
       <h2>Education</h2>
       <div class="panel">
-        <p><strong>MSc Electrical Engineering (Smart Systems)</strong> — University of Stuttgart (2020–Present)</p>
-        <p><strong>BEng Electronics & Communication Engineering</strong> — Dr Ambedkar Institute of Technology (2016–2020)</p>
-      </div>
-    </section>
-
-    <section id="skills" class="container">
-      <h2>Skills</h2>
-      <div class="panel grid cols-2">
         <ul>
-          <li>ROS/ROS2, Gazebo, Rviz</li>
-          <li>Python, C/C++, MATLAB</li>
-          <li>Computer Vision: OpenCV, OpenPose/OpenNI</li>
-          <li>Machine Learning, Human Skeleton Tracking</li>
-        </ul>
-        <ul>
-          <li>Docker, CI/CD, Git</li>
-          <li>Raspberry Pi, Embedded Systems</li>
-          <li>Lidar, Radar, Perception Sensors</li>
-          <li>HTML/CSS/JavaScript</li>
+          <li><strong>M.Sc. Electrical Engineering (Smart Systems)</strong> — University of Stuttgart (2020–Present)</li>
+          <li><strong>B.Eng. Electronics & Communication</strong> — Dr. Ambedkar Institute of Technology (2016–2020)</li>
         </ul>
       </div>
     </section>
@@ -211,17 +335,27 @@
       <div class="panel">
         <ul>
           <li>Email: <a href="mailto:sharathbhushan18@gmail.com">sharathbhushan18@gmail.com</a></li>
-          <li>Phone: +49 15904735846</li>
-          <li>LinkedIn: <a href="https://linkedin.com/in/sharath967">linkedin.com/in/sharath967</a></li>
-          <li>GitHub: <a href="https://github.com/SHARATHbhushan">github.com/SHARATHbhushan</a></li>
+          <li>Phone: <a href="tel:+4915904735846">+49 159 0473 5846</a></li>
+          <li>GitHub: <a href="https://github.com/SHARATHbhushan" target="_blank" rel="noopener">@SHARATHbhushan</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/sharath967/" target="_blank" rel="noopener">sharath967</a></li>
+          <li>Location: Stuttgart, Germany</li>
         </ul>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="y"></span> Sharath Nataraj. Hosted on GitHub Pages.</div>
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+        <div>© <span id="y"></span> Sharath Nataraj. Built with vanilla HTML/CSS. Hosted on GitHub Pages.</div>
+        <div class="mono">Last updated: <span id="updated"></span></div>
+      </div>
+    </div>
   </footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = new Date().toISOString().slice(0,10);
+  </script>
 </body>
 </html>
