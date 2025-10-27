@@ -60,16 +60,33 @@
     .theme-toggle{cursor:pointer; border:none; background:transparent; padding:8px; border-radius:12px}
 
     /* Video cards: two tiles per row, video left, text right */
-    .video-row{display:flex; gap:14px; align-items:stretch}
-    .video-row video{width:50%; aspect-ratio:16/9; display:block; border-right:1px solid color-mix(in srgb, var(--muted) 18%, transparent)}
-    .video-row .project-body{flex:1; display:flex; flex-direction:column; justify-content:space-between}
+    /* NEW: stacked cards (media full width, text below) */
+    .video-row{
+      display:flex;
+      flex-direction:column;     /* stack */
+      gap:0;                     /* no gap between media and text */
+      align-items:stretch;
+    }
+    .video-row video,
+    .video-row img{
+      width:100%;
+      aspect-ratio:16/9;         /* enforce a consistent frame */
+      display:block;
+      object-fit:cover;          /* crop nicely if aspect differs */
+      border-bottom:1px solid color-mix(in srgb, var(--muted) 18%, transparent);
+    }
+    .video-row .project-body{
+      padding:14px;              /* ensure padding even when stacked */
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      justify-content:flex-start;
+    }
 
     @media (max-width: 880px){
-      .hero{grid-template-columns: 1fr}
-      .grid.cols-3{grid-template-columns:1fr}
-      .grid.cols-2{grid-template-columns:1fr}
-      .video-row{flex-direction:column}
-      .video-row video{width:100%; border-right:none; border-bottom:1px solid color-mix(in srgb, var(--muted) 18%, transparent)}
+      .video-row video, .video-row img{
+        aspect-ratio: auto;
+      }
     }
   </style>
   <script>
