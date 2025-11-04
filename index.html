@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+    <!-- three.js + extras (no bundler needed) -->
+<!-- Non-module (global) builds -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/loaders/GLTFLoader.js"></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sharath Nataraj — Robotics Scientist & Engineer</title>
+  <link rel="stylesheet" href="styles/style.css"/>
+  <meta name="description" content="Robotics portfolio: projects, playground, publications, media."/>
+</head>
+<body>
+<header class="panel sticky">
+  <div class="container header">
+    <div class="brand">
+      <div class="avatar"></div>
+      <div>
+        <strong>Sharath Nataraj</strong><br/>
+        <span class="muted small">Robotics Scientist & Engineer · HRC · Safety · Perception</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="btn" href="#projects">Professional</a>
+      <a class="btn" href="#projects">Personal</a>
+      <a class="btn" href="#skills">Skills</a>
+      <a class="btn" href="#publications">Publications</a>
+      <a class="btn" href="robot.html">Robot Playground</a>
+      <a class="btn" href="assets/Sharath_Nataraj_Resume.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO PRO -->
+    <section class="hero-pro container">
+    <div class="hero-left">
+        <span class="badge glow">Open to collaborations</span>
+
+        <h1 class="headline">
+        Hi, I'm <span class="grad">Sharath</span> — I build <span class="underline">safe, intelligent</span> robot systems.
+        </h1>
+
+        <p class="lead-pro">
+        I work on <strong>human–robot collaboration (HRC)</strong>, <strong>robot safety</strong>,
+        <strong>perception</strong>, and <strong>navigation/control</strong>. I bridge simulation and hardware
+        with <span class="mono-pill">ROS/ROS 2</span>, <span class="mono-pill">Gazebo/Isaac Sim</span>, and modern ML,
+        focusing on ISO-aligned validation and real-time risk metrics.
+        </p>
+
+        <div class="chips">
+        <span class="chip">CARA Risk Modeling</span>
+        <span class="chip">Robo Dashcam</span>
+        <span class="chip">RoSA (Humanoid Safety)</span>
+        <span class="chip">ROS / ROS 2</span>
+        <span class="chip">OpenCV · PyTorch · TensorRT</span>
+        <span class="chip">Vicon · Isaac Sim</span>
+        </div>
+
+        <div class="cta">
+        <a class="btn primary" href="#projects">Explore Projects</a>
+        <a class="btn" href="mailto:sharathbhushan18@gmail.com">Contact</a>
+        <a class="btn" href="https://github.com/SHARATHbhushan" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.youtube.com/@sharathn2328" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn" href="https://www.linkedin.com/in/sharath-n-069605147/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </div>
+
+    <aside class="hero-card">
+        <div class="card-head">
+        <div class="avatar-ring">
+            <div class="avatar-dot"></div>
+        </div>
+        <div>
+            <div class="card-title">At a glance</div>
+            <div class="card-sub">Robotics Scientist & Engineer · HRC · Safety · Perception</div>
+        </div>
+        </div>
+
+        <div class="card-grid">
+        <div>
+            <div class="k">Expertise</div>
+            <div class="v">HRC · Safety · CV/ML · Nav/Control</div>
+        </div>
+        <div>
+            <div class="k">Tooling</div>
+            <div class="v">ROS/ROS2 · Gazebo · Isaac Sim · YOLO/OpenVINO</div>
+        </div>
+        <div>
+            <div class="k">Location</div>
+            <div class="v">Stuttgart, Germany · open to collaboration/remote</div>
+        </div>
+        <div>
+            <div class="k">Keywords</div>
+            <div class="v">risk assessment · collision modeling</div>
+        </div>
+        </div>
+
+        <div class="card-kpis">
+        <div class="kpi"><span class="n" data-count="7">0</span><span class="t">yrs in robotics & safety</span></div>
+        <div class="kpi"><span class="n" data-count="15">0</span><span class="t">deployed demos</span></div>
+        <div class="kpi"><span class="n" data-count="9">0</span><span class="t">platforms integrated</span></div>
+        </div>
+    </aside>
+
+    <!-- background decorations -->
+    <div class="hero-blob a"></div>
+    <div class="hero-blob b"></div>
+    <svg class="hero-grid" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+        <pattern id="pg" width="24" height="24" patternUnits="userSpaceOnUse">
+            <path d="M24 0H0V24" fill="none" stroke="rgba(255,255,255,.06)" />
+        </pattern>
+        </defs>
+        <rect width="600" height="300" fill="url(#pg)"></rect>
+    </svg>
+    </section>
+
+
+    <!-- ROBOT BRANDS -->
+    <section id="brands" class="container">
+    <h2>Robots I’ve worked with</h2>
+    <div class="panel carousel" aria-label="Robot brands carousel">
+        <button class="car-btn car-prev" aria-label="Previous">‹</button>
+        <div class="car-viewport">
+        <div id="car-slides" class="car-slides"></div>
+        </div>
+        <button class="car-btn car-next" aria-label="Next">›</button>
+    </div>
+    </section>
+
+    <!-- SKILLS (core domains) -->
+    <section id="skills" class="container">
+    <h2>Skills</h2>
+    <p class="lead">Core domains I operate in across research and deployment.</p>
+    <div id="skills-grid" class="skills-grid"></div>
+    </section>
+
+    <!-- SOFTWARE STACK -->
+    <section id="stack" class="container">
+    <h2>Software stack</h2>
+    <p class="lead">Lets just say it surely doesn't stop.</p>
+    <div id="stack-grid" class="stack-grid"></div>
+    </section>
+
+  
+
+
+    <!-- AUTOMATION & SENSORS -->
+    <section id="automation" class="container">
+    <h2>Automation & Sensors</h2>
+    <p class="lead">I'm the person who translates the 'what if' into the 'what is.' I have the skills for both the simulation and the C-suite presentation.</p>
+    <!-- Filters -->
+    <div class="as-filter" role="tablist" aria-label="Automation & Sensors filter">
+        <button class="as-tab is-active" data-filter="all"  role="tab" aria-selected="true">All</button>
+        <button class="as-tab" data-filter="PLC"          role="tab" aria-selected="false">PLCs</button>
+        <button class="as-tab" data-filter="Sensor"       role="tab" aria-selected="false">Sensors</button>
+    </div>
+
+    <!-- Honeycomb -->
+    <div id="as-honeycomb" class="honeycomb" aria-live="polite"></div>
+    </section>
+
+    
+    <!-- Projects (auto-rendered from /data/contents.json) -->
+    <section id="projects" class="container">
+    <h2>Projects</h2>
+    <p class="lead">Here are all my Projects which I can show : ) obviously there are much more </p>
+    <div id="projects-root"></div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="container">
+    <h2>Achievements</h2>
+    <div id="achievements-grid" class="showcase-grid"></div>
+    </section>
+
+    <section id="workshops" class="container">
+    <h2>Workshops & Speakerships</h2>
+    <div id="workshops-grid" class="showcase-grid"></div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="container">
+    <h2>Publications & Papers</h2>
+    <div id="publications-grid" class="showcase-grid"></div>
+    </section>
+
+  <!-- Toolkit + Git chart -->
+  <section class="container">
+      <div class="panel">
+        <h2>Git Commit Activity</h2>
+        <div class="grid cols-3" style="margin-top:10px">
+        <div class="panel" style="grid-column: 1 / -1; text-align:center;">
+            <p class="lead"><strong>Committed to building product and committing to delivery — I iterate fast, test rigorously, and ship reliable, production-ready robotics systems.</strong></p>
+        </div>
+        <img class="panel" src="assets/img/commit_1.png" alt="Commit screenshot" loading="lazy" style="display:block; width:100%; height:200px; object-fit:cover; border-radius:6px; box-sizing:border-box;">
+        <img class="panel" src="assets/img/commit_2.png" alt="Commit screenshot" loading="lazy" style="display:block; width:100%; height:200px; object-fit:cover; border-radius:6px; box-sizing:border-box;">
+        <img class="panel" src="assets/img/commit_3.png" alt="Commit screenshot" loading="lazy" style="display:block; width:100%; height:200px; object-fit:cover; border-radius:6px; box-sizing:border-box;">
+        </div>
+      </div>
+  </section>
+
+  <!-- Social -->
+  <section class="container">
+    <div class="panel">
+      <h2>Social Presence</h2>
+      <div id="social-links" class="actions"></div>
+      <div id="social-grid" class="grid cols-3"></div>
+    <script>
+    (function(){
+        const items = [
+            { src: "assets/img/social_1.jfif", href: "https://www.linkedin.com/posts/ki-fortschrittszentrum_hrc-cara-ai-ugcPost-7343570638843854848-xrit?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOB2hEBKly8Uai7DAoGRyNapNy9LKpNZz0" },
+            { src: "assets/img/social_2.jpg", href: "https://www.linkedin.com/posts/fraunhofer-ipa_live-von-der-messe-stuttgart-ugcPost-7249365547727876096-skJb?utm_source=share&utm_medium=member_desktop&rcm=ACoAACOB2hEBKly8Uai7DAoGRyNapNy9LKpNZz0" },
+        ];
+
+        const grid = document.getElementById('social-grid');
+        if (grid) {
+            items.forEach((it, i) => {
+                const a = document.createElement('a');
+                a.href = it.href;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.setAttribute('aria-label', `Open social link ${i + 1}`);
+                a.style.display = 'block';
+                a.style.overflow = 'hidden';
+
+                const img = document.createElement('img');
+                img.className = 'panel';
+                img.src = it.src;
+                img.alt = `Social screenshot ${i + 1}`;
+
+                // Ensure image fits inside the grid cell
+                img.style.display = 'block';
+                img.style.width = '100%';
+                img.style.maxWidth = '100%';
+                img.style.height = '200px';        // adjust height as needed
+                img.style.objectFit = 'cover';     // crop nicely to fill container
+                img.style.borderRadius = '6px';
+
+                a.appendChild(img);
+                grid.appendChild(a);
+            });
+        }
+    })();
+    </script>
+    </div>
+  </section>
+</main>
+
+<footer class="panel">
+  <div class="container foot">
+    <div>© <span id="year"></span> Sharath Nataraj. Static site. Hosted on GitHub Pages.</div>
+    <div class="muted small">Last updated: <span id="updated"></span></div>
+  </div>
+</footer>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>

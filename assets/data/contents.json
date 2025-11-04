@@ -1,0 +1,50 @@
+{
+  "groups": [
+    {
+      "id": "IPA",
+      "title": "Professional Projects / IPA",
+      "items": [
+        { "title": "Domain-specific action recognition", "desc": "LSTM training for industrial domain specific action recognition.", "media": { "type": "video", "src": "assets/data/IPA/Domain_specific_action.mp4" } },
+        { "title": "CARA", "desc": "HRC risk quantification and safety system optimization.", "media": { "type": "video", "src": "assets/data/IPA/rdc_cara.mp4" } },
+        { "title": "Real time PLC switching", "desc": "Safety configuration swithcing for optimized production time", "media": { "type": "video", "src": "assets/data/IPA/rdc_plc_switch.mp4" } },
+        { "title": "Robo-Dashcam — overview", "desc": "Optimizing safety configurations", "media": { "type": "video", "src": "assets/data/IPA/Robo-Dashcam_04.mp4" } },
+        { "title": "Automatic Hand Eye - Calibration", "desc": "Rela implementation of automatic hand eye calibration", "media": { "type": "video", "src": "assets/data/IPA/Screencast%20from%2003-20-2024%2011_20_12%20AM.webm" } },
+        { "title": "Automatic Calibration Pose Generatos", "desc": "Visual Components based pose generator plugin.", "media": { "type": "video", "src": "assets/data/IPA/Sprint_2023.MP4" } },
+        { "title": "SwarmBots demo", "desc": "Mapping/localization multi-robot.", "media": { "type": "video", "src": "assets/data/IPA/swarmBots-demo-video.mp4" } },
+        { "title": "Robo-Dashcam", "desc": "Camera/extrinsic alignment and deploying multiple AI models - Emotion, Gaze, Speed of human", "media": { "type": "video", "src": "assets/data/IPA/VC_RoboDashCam_calib.MP4" } }
+      ]
+    },
+    {
+      "id": "Master_Thesis",
+      "title": "Master Thesis Projects /University of Stuttgart",
+      "items": [
+        { "title": "Fault Injection — Panda 7-DOF", "desc": "Stochastic fault injection in ROS-Gazebo.", "media": { "type": "video", "src": "assets/data/Master_Thesis/Fault_Injection.mp4" } }
+      ]
+    },
+    {
+      "id": "Research_Project",
+      "title": "Research Projects / University of Stuttgart",
+      "items": [
+        { "title": "Speech module — telepresence Robot", "desc": "Wake word, STT/NLU/TTS + web UI.", "media": { "type": "video", "src": "assets/data/Research_Project/Speech_module.mp4" } }
+      ]
+    },
+    {
+      "id": "Bachelor_Thesis",
+      "title": "Bachelor Thesis Projects",
+      "items": [
+        { "title": "Defense Robot — bachelor project", "desc": "Tele-op/assisted platform with onboard sensing.", "media": { "type": "video", "src": "assets/data/Bachelor_Thesis/Defence_Robot.mp4" } }
+      ]
+    },
+    {
+      "id": "Personal_Projects",
+      "title": "Well this is just for fun / Personal Projects",
+      "items": [
+        { "title": "3D printed robot", "desc": "Printed arm with servo actuation.", "media": { "type": "image", "src": "assets/data/Personal_Projects/mk2_robot_arm.jpg" } },
+        { "title": "Watch-winder UI", "desc": "Frontend preview frame.", "media": { "type": "image", "src": "assets/data/Personal_Projects/Watch_winder_frontend.jpg" } },
+        { "title": "Watch-winder demo", "desc": "Runtime control & scheduling.", "media": { "type": "video", "src": "assets/data/Personal_Projects/Watch_winder.mp4" } }
+      ]
+    }
+
+
+  ]
+}
