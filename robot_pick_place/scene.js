@@ -14,7 +14,8 @@ const coordsCalibration = [0, -2, -5]
 
 // Setup scene
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xDADADA);
+// dark background
+scene.background = new THREE.Color(0x202020);
 
 // Camera configuration
 // Parameters: FOV, aspect ratio, minimum rendering distance, maximum rendering distance
@@ -128,9 +129,18 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
 
   // Animation blocking variable
   let runningAnimation = false;
- 
-  spherePositions.map(pos => {
-    const sphere = new THREE.Mesh(sphereGeometry1, material2);
+  // Generate distinct colors for each sphere — evenly spaced around the hue circle
+  const uniqueColors = [];
+  for (let i = 0; i < spherePositions.length; i++) {
+    const hue = i / spherePositions.length;   // evenly spaced 0..1
+    uniqueColors.push(new THREE.Color().setHSL(hue, 0.85, 0.5));
+    }
+  
+  spherePositions.map((pos, index) => {
+    const sphereMaterial = material2.clone();
+    sphereMaterial.color.copy(uniqueColors[index]);    // NEW
+    const sphere = new THREE.Mesh(sphereGeometry1, sphereMaterial);
+
     const sphereCoors = [pos[0]*Math.cos(pos[1]) + coordsCalibration[0],
 			0 + coordsCalibration[1],
 			-pos[0]*Math.sin(pos[1]) + coordsCalibration[2]];
