@@ -1,0 +1,60 @@
+{
+  "profile": {
+    "name": "Sharath Nataraj",
+    "title": "Robotics Scientist & Engineer",
+    "tagline": "HRC · Safety · Perception",
+    "email": "sharathbhushan18@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/sharath-n-069605147/",
+    "github": "https://github.com/SHARATHbhushan",
+    "youtube": "https://www.youtube.com/@sharathn2328",
+    "location": "Stuttgart, Germany",
+    "summary": "Research Engineer at Fraunhofer IPA focused on robotics safety, autonomy, and intelligent human–robot collaboration. Experienced in AI-based perception, simulation, and control systems for collaborative, industrial, and humanoid robots. Skilled in ROS/ROS2, machine learning, and safety technologies enabling predictive and context-aware robotic behavior."
+  },
+  "resume_text": "Sharath Nataraj SUMMARY: Research Engineer at Fraunhofer IPA focused on robotics safety, autonomy, and intelligent human–robot collaboration. Experienced in AI-based perception, simulation, and control systems for collaborative, industrial, and humanoid robots. Skilled in ROS/ROS2, machine learning, and safety technologies enabling predictive and context-aware robotic behavior.\nSkills Robotics Frameworks & Middleware: ROS / ROS 2 (Humble, Foxy), UR RTDE, KUKA Karel, ABB RAPID, Denso SDK, Unitree SDK 2, Visual Components, NVIDIA Omniverse, Gazebo, Rviz AI, Perception & Simulation: Deep Learning (PyTorch, TensorFlow, TensorRT), Computer Vision (OpenCV, OpenPose, OpenNI), Human Skeleton Tracking, Activity Recognition, 3D Geometry, Sensor Fusion, Sim2Real Transfer, NVIDIA CUDA / RAPIDS Safety & Risk Assessment Systems: Collaborative Robot Risk Modeling (ISO 10218-2, ISO/TS 15066), Context-Aware Real-Time Risk Assessment, Safety PLCs (SICK, Pilz, Omron), Emergency Stop / Safe Stop / Speed & Separation Monitoring (SSM), Force & Pressure Measurement for Cobots, Computer-Aided Risk Assessment (CARA) Tools & Data Infrastructure Git, Docker, CI/CD, Linux (Ubuntu), HTML/CSS/JavaScript, Data Analytics, Power BI, Raspberry Pi, 3D Sensors (LiDAR, Radar, RealSense, ZED), Vicon Motion Capture PROFESSIONAL EXPERIENCE Research Engineer, Robot Safety and Cobots June 2023–Present | Fraunhofer IPA, Stuttgart\n● Developer for Computer-Aided Risk Assessment (CARA) — a Fraunhofer flagship software for the safety evaluation of collaborative robot applications, enabling quantitative risk visualization and compliance with ISO 10218-2 and ISO/TS 15066 standards: https://www.ipa.fraunhofer.de/en/current-research/robot-and-assistive-systems/50_years_robotics/cara_en.html\n● Principal architect of Robo-Dashcam, a post-deployment safety optimization platform combining multi-sensor data (3D cameras, force sensors, radar, LiDAR) and AI-driven monitoring in industrial robot cells: https://www.youtube.com/watch?v=sHSu70lZKHA\n● Designed and implemented a physical safety test pipeline for humanoid robots, integrating real-time measurement, Vicon-based motion tracking, calculating stability parameters.\n● Core contributor to the RoSA (RoboSafety Assist) initiative — an innovation project selected for Fraunhofer’s AHEAD startup incubator program, focused on commercializing predictive safety solutions for collaborative and humanoid robots.\n+4915904735846 sharathbhushan18@gmail.com linkedin.com/in/sharath967 youtube.com/@sharathn2328 sharathbhushan.github.io EDUCATION MSc - Electrical Engineering Specialized in Smart Systems University of Stuttgart 10.2020 – 02.2023 BEng - Electronics and Communication Engineering Dr Ambedkar Institute of Technology 07.2016 - 08.2020 Conference and Seminars ERF Stuttgart 2023 Fraunhofer IPA, Stuttgart Automatica 2023 Munich Motek 2024 Stuttgart Safe HRC Workshop – Speaker 2024 Fraunhofer IPA, Stuttgart Automatica 2025 Stuttgart National Conference on Recent Trends in Science, Engineering\n● Pioneering research in context-aware and real-time risk assessment frameworks for human-robot collaboration (HRC), focusing on predictive modeling using multimodal perception and AI inference.\n● Integrated multi-vendor robotic systems (UR, KUKA, FANUC, ABB, Denso, Unitree G1) through unified control interfaces leveraging ROS 1/2, RTDE, Karel, and safety PLC environments.\n● Developed simulation and validation pipelines using Visual Components, NVIDIA Omniverse, and TensorRT for sim-to-real testing of robot safety concepts. Research Assistant, Robotic System Integration and Software Development July 2022–June 2023 | Fraunhofer IPA, Stuttgart\n● Responsible for deploying Human-Robot Collaboration using an Intel D435i Camera with advanced pose recognition software such as OpenPose and OpenNI.\n● Mapping and localization of swarm robots (TurtleBot).\n● Development of observers to calculate and plot error in swarm bot navigation - https://github.com/swarmBots-ipa\n● Skills Acquired: ROS and ROS2, Gazebo, Rviz, Point cloud, SLAM, Lidars, Image processing, Python, C++, Linux\n● Department Page - Software Engineering and Systems Integration - Fraunhofer IPA\n● GitHub: https://github.com/SHARATHbhushan Part time Internship on Robotics, Research and Development September 2021– September 2022 | BEC Gmbh, Reutlingen\n● Research and Development of a vision system for AGV using multiple Intel Realsense D435i cameras and its Pointcloud.\n● Responsible for dynamic object detection and tracking using YOLO accelerated using intel's openvino drivers.\n● Development of Control loop and calibration for LED's on AGV to accurately depict the motion of the AGV.\n● Project Page: https://www.b-e-c.de/de/industrie\n● Reference: mailto:o.benfarah@b-e-c.de Working Student IOT Developer July 2021–October 2021 | n-fuse Gmbh Stuttgart\n● Responsible for Development of entire backend for media control system for kids’ playhouse.\n● Effective calibration of raspberry Pi as Server and client configuration to Control projectors and speakers over the Wi-Fi\n● Responsible for Hardware configuration and setup.\n● Skills Acquired: Raspberry pi, Ultrasonic sensors, projectors, typescript, JavaScript, python, wireless communication, MQTT. and Management- Presented a paper on Self- Learning AI Robotic Tank Dr. Ambedkar Institute of Technology JUN 2019 Hands on Training on JAVA and Web Designing Dr. Ambedkar Institute of Technology APR 2017 Workshop on machine learning Indian Institute of Technology Roorkee MAR 2019 Publication Use of Ground Penetrating radars in Planetary Rovers – 2019 https://www.ijresm.com/volume- 1-issue-10-october-2019 Multipurpose Defense Robot 2020 https://www.irjet.net/volume7- issue7 Personal Projects MK2 Robotic ARM March 2022 - Present Integration of Inverse kinematics on open source EEZYBOT ARM mk2 3D Printed Robotic Arm, using MOVEIT and ROS Environment Line Following with Obstacle avoidance Robot November 2015 – February 2016 Skills Acquired: Infrared sensor, Ultrasonic Sensor, C, Arduino programming. Languages English - C1 Expert German – A1 Beginner\nPROJECTS Master Thesis on \"An Online Fault Injection Framework For 7 Piece Puzzle Demonstrator Based on ROS-Gazebo Simulation\" October 2022–February 2023 | IAS Uni-Stuttgart\n● Development and testing of ROS-based \"Fault Injection Tool\" to inject different and stochastic faults and errors into a 7DOF Panda Robot\n● Skills Acquired: ROS, Gazebo, Rviz, URDF, 3D modelling Research Project on Speech module for Autonomous control of Robot March 2022–October 2022 | IAAS Uni Stuttgart\n● Implementation of wake word detection, speech-to-text, natural language processing, text to speech, on a Telepresence robot to perform smart automation tasks and control the robot as well as have a meaningful conversation.\n● Connection of various implementations to a frontend where the user can choose to interact with the robot either by voice or by using text input.\n● Successfully implemented an Appointment scheduling system to contact and set a meeting with anyone in the department database by interacting with the robot.\n● Link: https://github.com/SHARATHbhushan/speech_module_client\n● Skills Acquired: Google cloud integration, C, C++, Python, Flask, MQTT, Natural Language Understanding\nMultipurpose Defense Robot\nJanuary 2020-July2020 | Bengaluru\n•\nDevelopment of a prototype of a defence robot with advanced technologies like metal detection, fire extinguisher, ultrasonic radar.\n•\nResponsible for the Design and Development of the Communication system\n•\nSkills Acquired: Autodesk (CAD), Temperature and Humidity Sensors, Ultrasonic Distance Measurement (HC-SR04), RF communication Module (HC12), Object detection, Face Recognition using Python",
+  "projects": [
+    {
+      "id": "IPA",
+      "title": "Professional Projects / IPA",
+      "items": [
+        { "title": "Domain-specific action recognition", "desc": "LSTM training for industrial domain specific action recognition.", "media": { "type": "video", "src": "assets/data/IPA/Domain_specific_action.mp4" } },
+        { "title": "CARA", "desc": "HRC risk quantification and safety system optimization.", "media": { "type": "video", "src": "assets/data/IPA/rdc_cara.mp4" } },
+        { "title": "Real time PLC switching", "desc": "Safety configuration swithcing for optimized production time", "media": { "type": "video", "src": "assets/data/IPA/rdc_plc_switch.mp4" } },
+        { "title": "Robo-Dashcam — overview", "desc": "Optimizing safety configurations", "media": { "type": "video", "src": "assets/data/IPA/Robo-Dashcam_04.mp4" } },
+        { "title": "Automatic Hand Eye - Calibration", "desc": "Rela implementation of automatic hand eye calibration", "media": { "type": "video", "src": "assets/data/IPA/Screencast%20from%2003-20-2024%2011_20_12%20AM.webm" } },
+        { "title": "Automatic Calibration Pose Generatos", "desc": "Visual Components based pose generator plugin.", "media": { "type": "video", "src": "assets/data/IPA/Sprint_2023.MP4" } },
+        { "title": "SwarmBots demo", "desc": "Mapping/localization multi-robot.", "media": { "type": "video", "src": "assets/data/IPA/swarmBots-demo-video.mp4" } },
+        { "title": "Robo-Dashcam", "desc": "Camera/extrinsic alignment and deploying multiple AI models - Emotion, Gaze, Speed of human", "media": { "type": "video", "src": "assets/data/IPA/VC_RoboDashCam_calib.MP4" } }
+      ]
+    },
+    {
+      "id": "Master_Thesis",
+      "title": "Master Thesis Projects /University of Stuttgart",
+      "items": [
+        { "title": "Fault Injection — Panda 7-DOF", "desc": "Stochastic fault injection in ROS-Gazebo.", "media": { "type": "video", "src": "assets/data/Master_Thesis/Fault_Injection.mp4" } }
+      ]
+    },
+    {
+      "id": "Research_Project",
+      "title": "Research Projects / University of Stuttgart",
+      "items": [
+        { "title": "Speech module — telepresence Robot", "desc": "Wake word, STT/NLU/TTS + web UI.", "media": { "type": "video", "src": "assets/data/Research_Project/Speech_module.mp4" } }
+      ]
+    },
+    {
+      "id": "Bachelor_Thesis",
+      "title": "Bachelor Thesis Projects",
+      "items": [
+        { "title": "Defense Robot — bachelor project", "desc": "Tele-op/assisted platform with onboard sensing.", "media": { "type": "video", "src": "assets/data/Bachelor_Thesis/Defence_Robot.mp4" } }
+      ]
+    },
+    {
+      "id": "Personal_Projects",
+      "title": "Well this is just for fun / Personal Projects",
+      "items": [
+        { "title": "3D printed robot", "desc": "Printed arm with servo actuation.", "media": { "type": "image", "src": "assets/data/Personal_Projects/mk2_robot_arm.jpg" } },
+        { "title": "Watch-winder UI", "desc": "Frontend preview frame.", "media": { "type": "image", "src": "assets/data/Personal_Projects/Watch_winder_frontend.jpg" } },
+        { "title": "Watch-winder demo", "desc": "Runtime control & scheduling.", "media": { "type": "video", "src": "assets/data/Personal_Projects/Watch_winder.mp4" } }
+      ]
+    }
+  ]
+}

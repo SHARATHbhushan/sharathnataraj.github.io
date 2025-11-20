@@ -56,7 +56,7 @@ const material2 = new THREE.MeshPhongMaterial({
   shininess: 150,
 });
 
-const metal =  new THREE.MeshStandardMaterial( {
+const metal = new THREE.MeshStandardMaterial({
   color: 0x303030,
   metalness: 1.0,
   roughness: 0.7,
@@ -73,16 +73,16 @@ const [normAngles, robotGeometry, robotControls, holdingPoint] = createRobot(sce
 const RobotKin = new Kinematics(robotGeometry)
 
 // Put robot in initial position
-let anglesCurrent = [0, 0, 0, 0, 0, 0, -pi/4, pi/4]
+let anglesCurrent = [0, 0, 0, 0, 0, 0, -pi / 4, pi / 4]
 setRobotAngles(robotControls, normAngles, anglesCurrent);
 
 
 // Trash bin
 const extrudeSettings = {
-    amount : 1.2,
-    steps : 1,
-    bevelEnabled: false,
-    curveSegments: 140
+  amount: 1.2,
+  steps: 1,
+  bevelEnabled: false,
+  curveSegments: 140
 };
 
 const arcShape = new THREE.Shape();
@@ -95,11 +95,14 @@ arcShape.holes.push(holePath);
 const trashBinGeometry = new THREE.ExtrudeGeometry(arcShape, extrudeSettings);
 const trashBin = new THREE.Mesh(trashBinGeometry, metal);
 const trashBinCoors = [-2 + coordsCalibration[0],
-		       0 + coordsCalibration[1],
-		       -1 + coordsCalibration[2]];
+0 + coordsCalibration[1],
+-1 + coordsCalibration[2]];
 trashBin.position.set(...trashBinCoors);
-trashBin.rotation.x = -pi/2
+trashBin.rotation.x = -pi / 2
 scene.add(trashBin);
+
+// Global array to store spheres
+window.spheres = [];
 
 // Function for creating a set of clickable spheres which start a pickup animation when clicked
 function createSpheres(sphereAmount, rRange, theetaRange) {
@@ -115,10 +118,9 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
     // If the distance (in polar coordinates) between the center of the new sphere overlaps
     // with the position of any of the already existing spheres, don't add it. The distance
     // between the centers must be greater than twice the sphere's radius.
-    if(spherePositions
-       .filter(pos =>
-	 {return Math.sqrt(pos[0]**2 + r**2 - 2*pos[0]*r*Math.cos(pos[1]-theeta)) < 2*sphereDims[0]})
-       .length === 0) {
+    if (spherePositions
+      .filter(pos => { return Math.sqrt(pos[0] ** 2 + r ** 2 - 2 * pos[0] * r * Math.cos(pos[1] - theeta)) < 2 * sphereDims[0] })
+      .length === 0) {
       spherePositions.push([r, theeta]);
     }
   }
@@ -134,103 +136,186 @@ function createSpheres(sphereAmount, rRange, theetaRange) {
   for (let i = 0; i < spherePositions.length; i++) {
     const hue = i / spherePositions.length;   // evenly spaced 0..1
     uniqueColors.push(new THREE.Color().setHSL(hue, 0.85, 0.5));
-    }
-  
+  }
+
   spherePositions.map((pos, index) => {
     const sphereMaterial = material2.clone();
-    sphereMaterial.color.copy(uniqueColors[index]);    // NEW
+    const color = uniqueColors[index];
+    sphereMaterial.color.copy(color);    // NEW
     const sphere = new THREE.Mesh(sphereGeometry1, sphereMaterial);
 
-    const sphereCoors = [pos[0]*Math.cos(pos[1]) + coordsCalibration[0],
-			0 + coordsCalibration[1],
-			-pos[0]*Math.sin(pos[1]) + coordsCalibration[2]];
+    // Store metadata on the sphere object
+    sphere.userData = {
+      id: index,
+      color: color,
+      originalPosition: [...pos] // r, theta
+    };
+
+    const sphereCoors = [pos[0] * Math.cos(pos[1]) + coordsCalibration[0],
+    0 + coordsCalibration[1],
+    -pos[0] * Math.sin(pos[1]) + coordsCalibration[2]];
     sphere.position.set(...sphereCoors);
     scene.add(sphere);
 
+    // Add to global array
+    window.spheres.push(sphere);
+
     sphere.cursor = 'pointer';
-    sphere.on('pointerup', function(ev) {
-      // Block other animations when animation already in place
-      if(runningAnimation) {
-	return;
-      } else {
-	runningAnimation = true;
-      }
-      // Sphere coordinates
-      let currSphere = this;
-      let {x, y, z} = currSphere.position;
-      x -= coordsCalibration[0];
-      y -= coordsCalibration[1] - sphereDims[0];
-      z -= coordsCalibration[2];
-      // Create angles for the sphere grabbing animation 
-      let angles1 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/6, pi/6];
-      let angles2 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/16, pi/16];
-      // Create the sphere grabbing animation with tween and tween2
-      let tween = new TWEEN.Tween(anglesCurrent)
-	  .to(angles1, 600)
-	  .easing(TWEEN.Easing.Quadratic.Out)
-	  .onUpdate(function() {
-	    setRobotAngles(robotControls, normAngles, anglesCurrent);
-	  });
-      let tween2 = new TWEEN.Tween(anglesCurrent)
-	  .to(angles2, 200)
-	  .easing(TWEEN.Easing.Quadratic.Out)
-	  .onUpdate(function() {
-	    setRobotAngles(robotControls, normAngles, anglesCurrent);
-	  })
-	  .onComplete(function() {
-	    currSphere.position.set(0, 0, 0)
-	    holdingPoint.add(currSphere);
-	  });
-      // Trashbin coordinates
-      ({x, y, z} = trashBin.position);
-      x -= coordsCalibration[0];
-      y -= coordsCalibration[1]-2;
-      z -= coordsCalibration[2];
-      // Create angles for the sphere disposing animation 
-      let angles3 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/16, pi/16];
-      let angles4 = [...RobotKin.inverse(x, y, z, 0, 0, -pi/2), -pi/6, pi/6];
-      // Create throwing the trash animation
-      let tween3 = new TWEEN.Tween(anglesCurrent)
-	  .to(angles3, 800)
-	  .easing(TWEEN.Easing.Quadratic.In)
-	  .onUpdate(function(){
-	    setRobotAngles(robotControls, normAngles, anglesCurrent);
-	  });
-      let tween4 = new TWEEN.Tween(anglesCurrent)
-	  .to(angles4, 200)
-	  .easing(TWEEN.Easing.Quadratic.In)
-	  .onUpdate(function(){
-	    setRobotAngles(robotControls, normAngles, anglesCurrent);
-	  })
-	  .onComplete(function(){
-	    holdingPoint.remove(currSphere);
-	    x += coordsCalibration[0]+0.07;
-	    y += coordsCalibration[1]-0.25;
-	    z += coordsCalibration[2];
-	    currSphere.position.set(x, y, z);
-	    scene.add(currSphere);
-	  });
-      let tween5 = new TWEEN.Tween({y: y+coordsCalibration[1]-0.25})
-	  .to({y: -1.5}, 200)
-	  .easing(TWEEN.Easing.Quadratic.In)
-	  .onUpdate(function(object){
-	    currSphere.position.setY(object.y);
-	  })
-	  .onComplete(function(){
-	    scene.remove(currSphere);
-	    runningAnimation = false;
-	  });
-      // Animation chain
-      tween4.chain(tween5);
-      tween3.chain(tween4);
-      tween2.chain(tween3);
-      tween.chain(tween2);
-      tween.start();
+    sphere.on('pointerup', function (ev) {
+      pickUpSphere(this);
     });
   });
 }
 
-createSpheres(20, [1.3, 2.9], [-5*pi/6, pi/2]);
+// Make pickUpSphere globally accessible
+window.pickUpSphere = function (sphere) {
+  // Block other animations when animation already in place
+  // We need a global lock or check if robot is busy. 
+  // For now, let's use a simple check on the sphere itself or a global flag.
+  if (window.isRobotBusy) return;
+  window.isRobotBusy = true;
+
+  // Sphere coordinates
+  let currSphere = sphere;
+  let { x, y, z } = currSphere.position;
+
+  // Sphere dimensions (hardcoded from createSpheres for now, ideally passed or stored)
+  const sphereDims = [0.3, 30, 30];
+
+  x -= coordsCalibration[0];
+  y -= coordsCalibration[1] - sphereDims[0];
+  z -= coordsCalibration[2];
+  // Create angles for the sphere grabbing animation 
+  let angles1 = [...RobotKin.inverse(x, y, z, 0, 0, -pi / 2), -pi / 6, pi / 6];
+  let angles2 = [...RobotKin.inverse(x, y, z, 0, 0, -pi / 2), -pi / 16, pi / 16];
+  // Create the sphere grabbing animation with tween and tween2
+  let tween = new TWEEN.Tween(anglesCurrent)
+    .to(angles1, 600)
+    .easing(TWEEN.Easing.Quadratic.Out)
+    .onUpdate(function () {
+      setRobotAngles(robotControls, normAngles, anglesCurrent);
+    });
+  let tween2 = new TWEEN.Tween(anglesCurrent)
+    .to(angles2, 200)
+    .easing(TWEEN.Easing.Quadratic.Out)
+    .onUpdate(function () {
+      setRobotAngles(robotControls, normAngles, anglesCurrent);
+    })
+    .onComplete(function () {
+      currSphere.position.set(0, 0, 0)
+      holdingPoint.add(currSphere);
+    });
+  // Trashbin coordinates
+  ({ x, y, z } = trashBin.position);
+  x -= coordsCalibration[0];
+  y -= coordsCalibration[1] - 2;
+  z -= coordsCalibration[2];
+  // Create angles for the sphere disposing animation 
+  let angles3 = [...RobotKin.inverse(x, y, z, 0, 0, -pi / 2), -pi / 16, pi / 16];
+  let angles4 = [...RobotKin.inverse(x, y, z, 0, 0, -pi / 2), -pi / 6, pi / 6];
+  // Create throwing the trash animation
+  let tween3 = new TWEEN.Tween(anglesCurrent)
+    .to(angles3, 800)
+    .easing(TWEEN.Easing.Quadratic.In)
+    .onUpdate(function () {
+      setRobotAngles(robotControls, normAngles, anglesCurrent);
+    });
+  let tween4 = new TWEEN.Tween(anglesCurrent)
+    .to(angles4, 200)
+    .easing(TWEEN.Easing.Quadratic.In)
+    .onUpdate(function () {
+      setRobotAngles(robotControls, normAngles, anglesCurrent);
+    })
+    .onComplete(function () {
+      holdingPoint.remove(currSphere);
+      x += coordsCalibration[0] + 0.07;
+      y += coordsCalibration[1] - 0.25;
+      z += coordsCalibration[2];
+      currSphere.position.set(x, y, z);
+      scene.add(currSphere);
+    });
+  let tween5 = new TWEEN.Tween({ y: y + coordsCalibration[1] - 0.25 })
+    .to({ y: -1.5 }, 200)
+    .easing(TWEEN.Easing.Quadratic.In)
+    .onUpdate(function (object) {
+      currSphere.position.setY(object.y);
+    })
+    .onComplete(function () {
+      scene.remove(currSphere);
+      // Remove from global array
+      window.spheres = window.spheres.filter(s => s !== currSphere);
+      window.isRobotBusy = false;
+    });
+  // Animation chain
+  tween4.chain(tween5);
+  tween3.chain(tween4);
+  tween2.chain(tween3);
+  tween.chain(tween2);
+  tween.start();
+}
+
+// Make robotDance globally accessible
+window.robotDance = function () {
+  if (window.isRobotBusy) return;
+  window.isRobotBusy = true;
+
+  // Dance moves!
+  // 1. Wave Left
+  // 2. Wave Right
+  // 3. Spin Base
+  // 4. Return to center
+
+  const startAngles = [...anglesCurrent];
+
+  // Move 1: Wave Left (Base rotates left, arm goes up slightly)
+  const move1Angles = [pi / 4, 0, -pi / 4, 0, 0, 0, -pi / 4, pi / 4];
+
+  // Move 2: Wave Right (Base rotates right)
+  const move2Angles = [-pi / 4, 0, -pi / 4, 0, 0, 0, -pi / 4, pi / 4];
+
+  // Move 3: Spin Base (360 spin - actually just back to center but fast)
+  const move3Angles = [0, -pi / 2, -pi / 2, 0, 0, 0, -pi / 4, pi / 4];
+
+  // Move 4: Back to start
+  const endAngles = [0, 0, 0, 0, 0, 0, -pi / 4, pi / 4];
+
+  let tween1 = new TWEEN.Tween(anglesCurrent)
+    .to(move1Angles, 400)
+    .easing(TWEEN.Easing.Sinusoidal.InOut)
+    .onUpdate(() => setRobotAngles(robotControls, normAngles, anglesCurrent));
+
+  let tween2 = new TWEEN.Tween(anglesCurrent)
+    .to(move2Angles, 400)
+    .easing(TWEEN.Easing.Sinusoidal.InOut)
+    .onUpdate(() => setRobotAngles(robotControls, normAngles, anglesCurrent));
+
+  let tween3 = new TWEEN.Tween(anglesCurrent)
+    .to(move1Angles, 400)
+    .easing(TWEEN.Easing.Sinusoidal.InOut)
+    .onUpdate(() => setRobotAngles(robotControls, normAngles, anglesCurrent));
+
+  let tween4 = new TWEEN.Tween(anglesCurrent)
+    .to(move2Angles, 400)
+    .easing(TWEEN.Easing.Sinusoidal.InOut)
+    .onUpdate(() => setRobotAngles(robotControls, normAngles, anglesCurrent));
+
+  let tween5 = new TWEEN.Tween(anglesCurrent)
+    .to(endAngles, 600)
+    .easing(TWEEN.Easing.Elastic.Out)
+    .onUpdate(() => setRobotAngles(robotControls, normAngles, anglesCurrent))
+    .onComplete(() => {
+      window.isRobotBusy = false;
+    });
+
+  tween1.chain(tween2);
+  tween2.chain(tween3);
+  tween3.chain(tween4);
+  tween4.chain(tween5);
+
+  tween1.start();
+}
+
+createSpheres(6, [1.3, 2.9], [-5 * pi / 6, pi / 2]);
 
 
 function animate() {
