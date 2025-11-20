@@ -2,7 +2,7 @@
 
 // Configuration
 const CONFIG = {
-    API_KEY: 'AIzaSyATq_ueQ77J5j-tavHi1mH5G2U_Sk0qGsg', // User needs to replace this
+    API_KEY: '__GEMINI_API_KEY__', // Will be replaced by GitHub Actions
     MODEL_NAME: 'gemini-2.5-flash',
     KNOWLEDGE_BASE_PATH: 'assets/knowledge_base.json'
 };
@@ -116,8 +116,8 @@ function toggleChat() {
     if (state.isOpen) {
         elements.input.focus();
         // Check API Key on first open
-        if (!CONFIG.API_KEY || CONFIG.API_KEY === 'YOUR_GEMINI_API_KEY') {
-            addMessage('bot', '⚠️ <strong>Configuration Required:</strong> Please set your Gemini API Key in <code>scripts/chat.js</code> to enable the chatbot.');
+        if (!CONFIG.API_KEY || CONFIG.API_KEY === '__GEMINI_API_KEY__') {
+            addMessage('bot', '⚠️ <strong>Configuration Required:</strong> API Key not configured.');
         }
     }
 }
@@ -133,8 +133,8 @@ async function handleSendMessage() {
     addMessage('user', text);
 
     // Check API Key
-    if (!CONFIG.API_KEY || CONFIG.API_KEY === 'YOUR_GEMINI_API_KEY') {
-        addMessage('bot', 'Please configure the API Key in scripts/chat.js');
+    if (!CONFIG.API_KEY || CONFIG.API_KEY === '__GEMINI_API_KEY__') {
+        addMessage('bot', 'API Key not configured.');
         return;
     }
 

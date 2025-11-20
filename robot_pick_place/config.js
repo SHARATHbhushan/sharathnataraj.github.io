@@ -1,1 +1,1 @@
-export const GEMINI_API_KEY = "AIzaSyATq_ueQ77J5j-tavHi1mH5G2U_Sk0qGsg";
+export const GEMINI_API_KEY = '__GEMINI_API_KEY__'; // Will be replaced by GitHub Actions
