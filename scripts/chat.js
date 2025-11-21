@@ -1,8 +1,9 @@
+import { GEMINI_API_KEY } from '../robot_pick_place/config.js';
+
 // Chatbot Logic
 
 // Configuration
 const CONFIG = {
-    API_KEY: '__GEMINI_API_KEY__', // Will be replaced by GitHub Actions
     MODEL_NAME: 'gemini-2.5-flash',
     KNOWLEDGE_BASE_PATH: 'assets/knowledge_base.json'
 };
@@ -116,7 +117,7 @@ function toggleChat() {
     if (state.isOpen) {
         elements.input.focus();
         // Check API Key on first open
-        if (!CONFIG.API_KEY || CONFIG.API_KEY === '__GEMINI_API_KEY__') {
+        if (!GEMINI_API_KEY || GEMINI_API_KEY === '__GEMINI_API_KEY__') {
             addMessage('bot', '⚠️ <strong>Configuration Required:</strong> API Key not configured.');
         }
     }
@@ -133,7 +134,7 @@ async function handleSendMessage() {
     addMessage('user', text);
 
     // Check API Key
-    if (!CONFIG.API_KEY || CONFIG.API_KEY === '__GEMINI_API_KEY__') {
+    if (!GEMINI_API_KEY || GEMINI_API_KEY === '__GEMINI_API_KEY__') {
         addMessage('bot', 'API Key not configured.');
         return;
     }
@@ -238,7 +239,7 @@ async function generateResponse(userQuery) {
 
     const context = constructContext(userQuery);
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${CONFIG.MODEL_NAME}:generateContent?key=${CONFIG.API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${CONFIG.MODEL_NAME}:generateContent?key=${GEMINI_API_KEY}`;
 
     const payload = {
         contents: [{
