@@ -26,7 +26,7 @@ jobs:
 
       - name: Inject API Key
         run: |
-          sed -i 's/__GEMINI_API_KEY__/${{ secrets.GEMINI_API_KEY }}/g' scripts/chat.js
+          sed -i 's/__GEMINI_API_KEY__/${{ secrets.GEMINI_API_KEY }}/g' scripts/config.js
           sed -i 's/__GEMINI_API_KEY__/${{ secrets.GEMINI_API_KEY }}/g' robot_pick_place/config.js
 
       - name: Setup Pages
