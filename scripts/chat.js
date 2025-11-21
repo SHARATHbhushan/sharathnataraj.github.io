@@ -1,4 +1,4 @@
-import { GEMINI_API_KEY } from '../robot_pick_place/config.js';
+import { GEMINI_API_KEY } from '.config.js';
 
 // Chatbot Logic
 
